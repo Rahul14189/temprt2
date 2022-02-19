@@ -1,0 +1,29 @@
+
+{% block content %}
+
+<form action="home" method="post">
+        {% csrf_token %}
+    <label for="Temperature">Enter Temperature: </label>
+    <input id="Temperature" type="text" name="temperature" value="{{ current_temp }}">
+    <br>
+
+    <br>
+    <label for="Person">Enter Employee Name: </label>
+    <input id="Person" type="text" name="person" value="{{ current_person }}">
+    <br>
+
+    <br>
+    <label for="Date">Enter Date: </label>
+    <input id="Date" type="date" name="date" value="{{ current_date }}">
+    <br>
+
+    <br>
+    <label for="Device">Enter Device Name: </label>
+    <input id="Device" type="text" name='device' value="{{ current_device }}">
+    <br>
+
+    <br>
+    <input type="submit">
+</form>
+
+{% endblock content %}

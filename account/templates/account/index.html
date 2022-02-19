@@ -1,0 +1,30 @@
+
+{% block content %}
+
+<form action="index" method="post">
+        {% csrf_token %}
+    <br>
+    <label for="Person">Enter Employee Name: </label>
+    <input id="Person" type="text" name="person" value="{{ current_person }}">
+    <br>
+
+    <br>
+    <input type="submit">
+</form>
+
+{% for i in data_1 %}
+<br><label><b>Name</b></label>{{i.person}}<label><b>Temperature</b></label> {{i.temp}}
+<label><b>Device</b></label> {{i.dev}}<label><b>Date</b></label> {{i.date}}
+{% endfor %}
+<!--{{data}}-->
+
+<p> Following person are having temperature more than 100 Farenheit</p>
+{% for s in danger %}
+<br><b>{{s.person}}</b> {{s.temp}}
+{% endfor %}
+
+<p>To register new data, <a href="account/index.html">Click Here</a> </p>
+
+
+
+{% endblock content %}

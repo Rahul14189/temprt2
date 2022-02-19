@@ -1,0 +1,1 @@
+web: gunicorn temprt.wsgi --log-file -
